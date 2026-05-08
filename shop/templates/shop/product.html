@@ -1,0 +1,23 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="text-center mb-4">Детали за букет</h2>
+        <div class="card">
+            {% if buket.fotografija %}
+                <img src="{{ buket.fotografija.url }}" class="card-img-top" style="max-height:350px; object-fit:cover;">
+            {% endif %}
+            <div class="card-body">
+                <h4>{{ buket.ime }}</h4>
+                <p><strong>Тип на цвеќе:</strong> {{ buket.tip_na_cveke }}</p>
+                <p><strong>Големина:</strong> {{ buket.get_golemina_display }}</p>
+                <p><strong>Цена:</strong> {{ buket.cena }} ден.</p>
+                <p><strong>Година:</strong> {{ buket.godina_na_podgotovka }}</p>
+                <p><strong>Свежо:</strong> {% if buket.sveze %}Свеж букет{% else %}Не е свеж{% endif %}</p>
+                <a href="#" class="btn btn-success">Додади во кошничка</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

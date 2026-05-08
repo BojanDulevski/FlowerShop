@@ -1,0 +1,21 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+<h2 class="text-center mb-4">Сите букети</h2>
+<div class="row">
+    {% for buket in buketi %}
+    <div class="col-md-3 mb-4">
+        <div class="card h-100">
+            {% if buket.fotografija %}
+                <img src="{{ buket.fotografija.url }}" class="card-img-top" style="height:200px; object-fit:cover;">
+            {% endif %}
+            <div class="card-body text-center">
+                <h5 class="card-title">{{ buket.ime }}</h5>
+                <p class="card-text">{{ buket.cena }} ден.</p>
+                <a href="{% url 'product' buket.pk %}" class="btn btn-success">Детали</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
