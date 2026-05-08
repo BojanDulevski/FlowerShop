@@ -1,14 +1,15 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "tvoj_proekt/wsgi.py",
+      "src": "flower_shop/wsgi.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "tvoj_proekt/wsgi.py"
+      "dest": "flower_shop/wsgi.py"
     }
   ]
 }
